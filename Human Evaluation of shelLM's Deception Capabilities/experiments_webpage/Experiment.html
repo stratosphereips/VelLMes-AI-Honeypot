@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muris Sladic Thesis Experiments</title>
+<style>
+    /* Optional styling for the iframe container */
+    #iframe-container {
+        width: 100%;
+        height: 500px; /* Adjust the height as needed */
+        border: 1px solid #ccc;
+        overflow: auto; /* Enable scrolling if the content is larger than the iframe */
+		display: none;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none; /* Remove border around iframe */
+    }
+	.box {
+        width: 60%; /* Adjust the width as needed */
+        margin: 0 auto; /* Center the box horizontally */
+        padding: 20px;
+        border: 2px solid blue;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        text-align: left;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+		margin-bottom: 5px;
+    }
+    .title {
+        width: 60%; /* Adjust the width as needed */
+        margin: 0 auto; /* Center the box horizontally */
+        padding: 20px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+		margin-bottom: 5px;
+    }
+	.privacy-notice {
+		width: 60%;
+		margin: 0 auto;
+        border: 2px solid red; /* Red border */
+        padding: 20px; /* Add padding for spacing */
+        border-radius: 5px; /* Add border radius for rounded corners */
+        text-align: left; /* Center the text horizontally */
+		background-color: #f9f9f9;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+		margin-bottom: 5px;
+    }
+	#iframe-container {
+        margin-bottom: 20px; /* Add space between email input and iframe */
+		margin-top: 20px;
+    }
+	#emailInput {
+		margin-top: 40px;
+	}
+	#validationForm{
+		margin-top: 20px;
+	}
+	.banner {
+		background-color: #3d3938;
+		color: white;
+		padding: 10px; /* Adjust padding as needed */
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.logo {
+		height: 100px; /* Adjust height as needed */
+		margin: 0 10px; /* Adjust margin as needed */
+	}
+    .centered-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh; /* adjust as needed */
+        margin-top: 10px;
+    }
+    .left-aligned-form {
+        width: 50%; /* adjust the width of the form */
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px; /* Adjust the margin as needed */
+        justify-content: flex-start;
+    }
+    #emailForm{
+        width: 50%; /* adjust the width of the form */
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #validationForm{
+        width: 50%; /* adjust the width of the form */
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="email"], input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    button[type="button"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button[type="button"]:hover {
+        background-color: #0056b3;
+    }
+    #giveUpButton {
+        margin-top: 5px;
+        padding: 10px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #giveUpButton:hover {
+        background-color: #bb2d3b;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="banner">
+    <!-- Example logos, replace with your own -->
+    <img src="Logos.jpg" class="logo">
+</div>
+
+<div class="title">
+    <h1>Shell Usage Experiment</h1>
+</div>
+
+<div class="box">
+	<h3>Information and Instructions</h3>
+</div>
+
+<div class="box">
+    <p> 
+		My name is Muris Sladić and I am a student at a Czech Technical University in Prague, Faculty of Electrical Engineering.<br>
+		This is a webpage for an experiment to test types of human interaction with shell systems, and it is a part of my Master's thesis project.<br>
+		This experiment requires you to interract with a shell system, and to achieve that we are going to connect you to our IoT terminal. <br>
+		In order to coordinate with multiple systems, we have introduced a small delay in the system response times.<br>
+        We expect that the time needed to complete the experiment is around 15 minutes (this includes the task and the survey).<br><br>
+        We are going to send you (if you want) the correct answers later by e-mail.<br>
+        In case you wish <b>to contact us</b>, you can do so at following emails: <br><br>
+        <b><i>sladimur@fel.cvut.cz</i></b><br>
+        <b><i>stratosphere@aic.fel.cvut.cz</i></b><br>
+		<br>
+		You are playing the role of an attacker in a computer and your goal is to find the secret private key of a cryptowallet. <br>
+		You need to type commands in a terminal and try not to be detected.<br>
+		You win when you copy the private key to the field Solution in this webpage.<br>
+        Terminal and Solution field will appear after you submit your email bellow.<br>
+		After that, we will need you to complete a <b>short survey</b>, which should take you no longer than 3 minutes.<br>
+        In case you are <b>not able to complete the task</b>, or think you spent too much time solving it without finding a solution, there will be a 'Give Up'
+        button, which will take you directly to the survey.<br>
+		<br>
+		Please, after finishing the task, wait a few seconds for the survey to load.<br>
+		To begin, please enter your e-mail, to which we can send you the results.<br>
+	</p>
+</div>
+
+<div class="privacy-notice">
+    <h3>Important Data Privacy Notice</h3>
+</div>
+
+<div class="privacy-notice">
+    <p> 
+		We are not going to collect or store any personal private information, except for your email address.<br>
+		You can opt out of the experiment at any time and ask for your data to be deleted.<br>
+		We are only going to ask questions regarding the experiment and your cyber security skill level.<br>
+		<br>By submitting your e-mail, you agree to the above stated.<br>
+	</p>
+</div>
+
+<div class="centered-form">
+    <form id="emailForm">
+      <label for="emailInput">Enter E-mail:</label>
+      <input type="email" id="emailInput" placeholder="person@email.domain" onkeydown="return event.key != 'Enter';" autocomplete="off">
+      <button type="button" onclick="showIframe()" id="mailButton">Submit</button>
+    </form>
+</div>
+  
+<div id="iframe-container">
+    <iframe id="myFrame"></iframe>
+</div>
+
+<div class="centered-form">
+    <form id="validationForm" style="display: none;">
+      <label for="validationKey">Solution:</label>
+      <input type="text" id="validationKey" placeholder="Solution" onkeydown="return event.key != 'Enter';" autocomplete="off">
+      <button type="button" onclick="validateKey()" id="submitKeyButton">Submit</button>
+      <button type="button" onclick="giveUp()" id="giveUpButton" style="display: none;">Give Up</button>
+    </form>
+    
+</div>
+
+<br>
+
+<script>
+var random = Math.random();
+var email
+
+function showIframe() {
+    email = document.getElementById("emailInput").value;
+    // Validate email here if needed
+    var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (regex.test(email)) {
+        document.getElementById("iframe-container").style.display = "block";
+        document.getElementById("validationForm").style.display = "block";
+		document.getElementById("mailButton").style.display = "none";
+        document.getElementById("giveUpButton").style.display = "block";
+        // Call function to set random iframe URL
+        setRandomIframeUrl();
+		
+		fetch('/submit-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ 
+			email: email 
+			})
+		})
+		.then(response => response.text())
+		.then(data => console.log(data))
+		.catch(error => console.error('Error:', error));
+			
+    } else {
+        alert("Please enter your email.");
+    }
+}
+
+function validateKey() {
+    var key = document.getElementById("validationKey").value;
+    // Perform validation here, for example:
+    if ((key === "L3JrY5V5vZirLZg9d1S2x55aXfZtuic4PLVF5TxL1KfPKpQxnbF1" && random < 1/3) || 
+        (key === "L3JrY5V5vZirLZg9d1S2x55aXfZtuic4PLVF5TxL1KfPKpQxnbF3" && random >= 1/3 && random < 2/3) 
+        || (key === "L3JrY5V5vZirLZg9d1S2x55aXfZtuic4PLVF5TxL1KfPKpQxnbF2" && random >= 2/3)) {
+        document.getElementById("iframe-container").style.display = "none";
+        document.getElementById("submitKeyButton").style.display = "none";
+        document.getElementById("giveUpButton").style.display = "none";
+        (function(t,e,s,n){var o,a,c;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(s),a=o[o.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=n,c.src="https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd7rVtXKwzNb4_2Bpg_2Bw1yLbRRkf1dbg6pJ2ONM8LtXxMZV.js",a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");		fetch('/submit-key', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ key: key, email: email, prob: random})
+		})
+		.then(response => response.text())
+		.then(data => console.log(data))
+		.catch(error => console.error('Error:', error));
+	} else {
+        alert("Invalid key. Please try again.");
+    }
+}
+
+function giveUp() {
+    document.getElementById("iframe-container").style.display = "none";
+    document.getElementById("submitKeyButton").style.display = "none";
+    document.getElementById("giveUpButton").style.display = "none";
+    (function(t,e,s,n){var o,a,c;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(s),a=o[o.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=n,c.src="https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd7rVtXKwzNb4_2Bpg_2Bw1yLbRRkf1dbg6pJ2ONM8LtXxMZV.js",a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");
+    fetch('/submit-key', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ key: "DNF", email: email, prob: random})
+		})
+		.then(response => response.text())
+		.then(data => console.log(data))
+		.catch(error => console.error('Error:', error));
+}
+
+function setRandomIframeUrl() {
+    // Generate a random number between 0 and 1
+    
+    // Determine which page to load based on the random number
+    var iframe = document.getElementById('myFrame');
+
+    if (random < 1/3) {
+        iframe.src = "https://backend-shellsevaluation.thesis.stratosphereips.org/?hostname=172.30.224.13&username=tomas&port=22&password=dG9teQ==";
+    } else if (random < 2/3) {
+        iframe.src = "https://backend-shellsevaluation.thesis.stratosphereips.org/?hostname=172.30.224.12&username=tomas&port=2222&password=dG9teQ==";
+    } else {
+        // Change this URL to the second page's URL
+        iframe.src = "https://backend-shellsevaluation.thesis.stratosphereips.org/?hostname=172.30.224.11&username=tomas&port=22&password=dG9teQ==";
+    }
+}
+</script>
+
+</body>
+</html>

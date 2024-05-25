@@ -1,0 +1,7 @@
+HISTSIZE=10000
+HISTFILESIZE=10000
+export LS_OPTIONS='--color=auto'
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -lh'
+PS1="\[\033[01;32m\]\u@olaf\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+cd /root/
