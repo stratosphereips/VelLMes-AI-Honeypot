@@ -1,0 +1,136 @@
+version: '3.3'
+
+services:
+  webpage:
+    build: ./experiments_webpage
+    container_name: experiments_webpage
+    hostname: experiments_webpage
+    restart: always
+    volumes:
+      - ./experiments_webpage/emails.txt:/app/emails.txt:rw
+      - ./experiments_webpage/keys.txt:/app/keys.txt:rw
+    networks:
+      thesis_muris_frontend:
+        ipv4_address: 172.30.222.2
+    deploy:
+      resources:
+        limits:
+          cpus: '3'
+          memory: 4GB
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+        compress: "True"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.webpage.entrypoints=websecure"
+      - "traefik.http.routers.webpage.rule=Host(`shellsevaluation.thesis.stratosphereips.org`)"
+      - "traefik.http.routers.webpage.tls.certresolver=resolver"
+      - "traefik.http.services.webpage.loadbalancer.server.port=3000"
+
+  webssh:
+    build: ./webssh
+    container_name: webssh
+    hostname: webssh
+    restart: always
+    networks:
+      thesis_muris:
+        ipv4_address: 172.30.224.3
+    healthcheck:
+      test: ["CMD", "python", "-c", "'import requests; response = requests.get(\"http://localhost:8888/\"); assert response.status_code == 200'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: '3'
+          memory: 4GB
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+        compress: "True"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.webssh.entrypoints=websecure"
+      - "traefik.http.routers.webssh.rule=Host(`backend-shellsevaluation.thesis.stratosphereips.org`)"
+      - "traefik.http.routers.webssh.tls.certresolver=resolver"
+      - "traefik.http.services.webssh.loadbalancer.server.port=8888"
+
+  shellm:
+    build: ./shelLM
+    container_name: courageous_coyote
+    hostname: ailabs
+    restart: always
+    volumes:
+      - ./shelLM/logs:/opt/system/logs:rw
+      - ./shelLM/historylogs:/opt/system/historylogs:rw
+    networks:
+      thesis_muris:
+        ipv4_address: 172.30.224.11
+    deploy:
+      resources:
+        limits:
+          cpus: '3'
+          memory: 4GB
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+        compress: "True"
+
+  cowrie:
+    image: sladimur/dockcow
+    container_name: mystic_merlin
+    hostname: ailabs
+    restart: always
+    networks:
+      thesis_muris:
+        ipv4_address: 172.30.224.12
+    deploy:
+      resources:
+        limits:
+          cpus: '3'
+          memory: 4GB
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+        compress: "True"
+  
+  ubuntu:
+    image: sladimur/regular_updated
+    container_name: whimsical_wombat
+    hostname: ailabs
+    restart: always
+    stdin_open: true # Keeps stdin open
+    tty: true # Allocates a tty
+    networks:
+      thesis_muris:
+        ipv4_address: 172.30.224.13
+    deploy:
+      resources:
+        limits:
+          cpus: '3'
+          memory: 4GB
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+        compress: "True"
+
+networks:
+  thesis_muris:
+    external: true
+  thesis_muris_backend:
+    external: true
+  thesis_muris_frontend:
+    external: true
