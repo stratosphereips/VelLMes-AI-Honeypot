@@ -1,22 +1,35 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "YOUR_NAME_HERE"
-  given-names: "YOUR_NAME_HERE"
-  email: youremailhere
+- family-names: "Sladić"
+  given-names: "Muris"
+  email: sladimur@fel.cvut.cz
   affiliation: >-
       Stratosphere Laboratory, AIC, FEL, Czech
       Technical University in Prague
-  orcid: "https://orcid.org/0000-0000-0000-0000"
-- family-names: "Lisa"
-  given-names: "Mona"
-  email: youremailhere
+  orcid: "https://orcid.org/0009-0002-9308-2086"
+- family-names: "Valeros"
+  given-names: "Veronica"
+  email: veronica.valeros@fel.cvut.cz
   affiliation: >-
       Stratosphere Laboratory, AIC, FEL, Czech
       Technical University in Prague
-  orcid: "https://orcid.org/0000-0000-0000-0000"
-title: "repository-template"
+  orcid: "https://orcid.org/0000-0003-2554-3231"
+- family-names: "Catania"
+  given-names: "Carlos"
+  email: harpo@ingenieria.uncuyo.edu.ar
+  affiliation: >-
+      CONICET, UNCuyo
+  orcid: "https://orcid.org/0000-0002-1749-310X"
+- family-names: "Garcia"
+  given-names: "Sebastian"
+  email: sebastian.garcia@agents.fel.cvut.cz
+  affiliation: >-
+      Stratosphere Laboratory, AIC, FEL, Czech
+      Technical University in Prague
+  orcid: "https://orcid.org/0000-0001-6238-9910"
+title: "VelLMes-AI-Honeypot"
 version: 1.0.0
 doi: 10.5281/zenodo.1234
-date-released: 2022-07-13
+date-released: 2024-05-24
 url: "https://github.com/stratosphereips/repository-template"
