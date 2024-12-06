@@ -175,7 +175,7 @@ def get_latest_attackers_ids(counter):
 
 
 def parse_historylog(filename, ssh):
-    stdin, stdout, stderr = ssh.exec_command(f"cat /opt/demos/shelLM/2024_shellm/historylogs/{filename}")
+    stdin, stdout, stderr = ssh.exec_command(f"cat /path/to/the/specific/history/log/{filename}")
     conversation = stdout.read().decode('utf-8')
     conversation_error = stderr.read().decode('utf-8')
 
@@ -351,10 +351,10 @@ def get_logs_from_server():
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
     # Load your private key to log in to remote server with logs
-    private_key = paramiko.RSAKey.from_private_key_file('C:\\Users\\Muris\\.ssh\\id_rsa')
+    private_key = paramiko.RSAKey.from_private_key_file('path/to/private/key')
 
     # Connect to the SSH server using key-based authentication
-    ssh.connect(hostname="olympus.felk.cvut.cz", port=902, username="muris", pkey=private_key)
+    ssh.connect(hostname="hostname.com", port=<portnum>, username="user", pkey=private_key)
 
     # Execute commands as before
     stdin, stdout, stderr = ssh.exec_command("docker exec 9c85812a9ad8 last -F")
@@ -365,7 +365,7 @@ def get_logs_from_server():
     counter = count_newest(ssh_data)
     ssh_data = ssh_data[:counter][::-1]
 
-    stdin, stdout, stderr = ssh.exec_command(f"ls /opt/demos/shelLM/2024_shellm/historylogs")
+    stdin, stdout, stderr = ssh.exec_command(f"ls /path/to/where/history/logs/are/saved")
     shellm_histories = stdout.read().decode('utf-8')
     error_getting_histories = stderr.read().decode('utf-8')
 
