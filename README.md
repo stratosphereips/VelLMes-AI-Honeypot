@@ -6,6 +6,8 @@ The `VelLMes` can simulate services such as SSH Linux shell (`shelLM`), MySQL, P
 
 This repository also includes the `Attacker LLM` that can interact with Linux shells, search for vulnerabilities, and report on its findings.
 
+The newest addition is the Web Dashboard which displays all the connections to the shelLM honeypot. Furthermore, it provides a view of specific sessions by displaying all the issued commands and shelLM responses by clicking on an ID of a specific session.
+
 ## Features
 
 `VelLMes` was developed in Python and currently uses Open AI GPT models. Among its key features are:
@@ -50,6 +52,14 @@ Another example of how the `VelLMes` can be run:
 ```
 ~$ python3 VelLMes.py -e .env -c configSSH.yml -m "gpt-4" -mt 800 -t 0.2 -o "conversation.txt" -l "logs.txt"
 ```
+
+To use the web dashboard it is necessary to deploy the log_manager.py which acts as a server that communicates with database. The database is filled based on the information received from the server where the shelLM is deployed. 
+
+The information about the database, as well as the server where shelLM is deployed needs to be put in the ssh_module.py at the marked places.
+
+To have the most recent information from shelLM session it is advised to run the ssh_module.py as a cronjob that checks every minute or less if some new shelLM sessions were established and to update the DB accordingly.
+
+The web dashboard needs to be hosted as well. It is communicating with log_manager.py to get the latest information from the DB and display it.
 
 # About
 
