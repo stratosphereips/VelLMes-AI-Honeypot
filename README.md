@@ -64,5 +64,6 @@ The web dashboard needs to be hosted as well. It is communicating with log_manag
 # About
 
 This tool was developed at the Stratosphere Laboratory at the Czech Technical University in Prague.
-It was part of the research for the Master's thesis of Muris Sladić, which can be found here: 
-https://dspace.cvut.cz/bitstream/handle/10467/115799/F3-DP-2024-Sladic-Muris-Large%20Languge%20Models%20as%20Defensive%20Honeypots.pdf
+
+It was part of the research for the Master's thesis of Muris Sladić, which can be found [here](https://dspace.cvut.cz/bitstream/handle/10467/115799/F3-DP-2024-Sladic-Muris-Large%20Languge%20Models%20as%20Defensive%20Honeypots.pdf). 
+
