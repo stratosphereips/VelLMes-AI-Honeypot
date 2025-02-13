@@ -1,4 +1,4 @@
-# VelLMes-AI-Honeypot
+# VelLMes-AI-Deception Framework
 
 The `VelLMes` read as (Vel-L-M-es, from Slavic deity Veles and LLMs) creates interactive, dynamic, and realistic honeypots through the use of Large Language Models (LLMs). The `VelLMes` tool was created from a research project to show the effectiveness of dynamic fake file systems and command responses to keep attackers trapped longer, thus increasing the intelligence collected.
 
